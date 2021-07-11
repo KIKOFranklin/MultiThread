@@ -28,22 +28,27 @@ public class Review02 {
 
     }
 
+    public synchronized void doThisJob(){
+        System.out.println(Thread.currentThread().getName() + "I'm working");
+    }
+
+    public static void startThread(Runnable r){
+        new Thread(r).start();
+    }
+
 
     public static void main(String[] args) {
         Review02 review02 = new Review02();
-        new Thread(() -> {
+        startThread(() -> {
             try {
                 review02.doTimeConsumingTask();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }).start();
-        new Thread(() -> {
-            try {
-                review02.doTimeConsumingTask();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }).start();
+        });
+
+        startThread(() -> {
+            review02.doThisJob();
+        });
     }
 }

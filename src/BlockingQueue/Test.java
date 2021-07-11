@@ -1,6 +1,7 @@
 package BlockingQueue;
 
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.SynchronousQueue;
 
 /**
@@ -10,6 +11,7 @@ import java.util.concurrent.SynchronousQueue;
  */
 public class Test {
     public static void main(String[] args) {
+
         SynchronousQueue<String> synchronousQueue = new SynchronousQueue();
 
         new Thread(() -> {

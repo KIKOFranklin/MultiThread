@@ -1,6 +1,7 @@
 package VolatileReview;
 
 public class MyThread extends Thread {
+
     private volatile boolean isRunning = true;
 
     public boolean isRunning() {
@@ -17,4 +18,5 @@ public class MyThread extends Thread {
         }
         System.out.println("线程被停止了");
     }
+
 }

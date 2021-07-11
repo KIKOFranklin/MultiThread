@@ -12,7 +12,7 @@ public class Test {
         //线程数量：最多三个线程
         Semaphore semaphore = new Semaphore(3);
 
-        for (int i = 0; i < 60; i++) {
+        for (int i = 0; i < 20; i++) {
             new Thread(()->{
                 try {
                     semaphore.acquire(); //获取线程位置 如果已满 且是队列等待 先行acquire的线程位置靠前 遵循FIFO的规则

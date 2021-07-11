@@ -5,7 +5,7 @@ import java.util.concurrent.CyclicBarrier;
 
 /**
  * @author KIKOFranklin
- * @create 2021/4/15 0015 21:45
+ * @since 2021/4/15 0015 21:45
  */
 public class Test {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class Test {
 
         for (int i = 0; i < 7; i++) {
             int temp = i;
-            new Thread(()->{
+            new Thread(() -> {
                 System.out.println(Thread.currentThread().getName() + "收集到了" + temp + "龙珠");
                 try {
                     cyclicBarrier.await();
